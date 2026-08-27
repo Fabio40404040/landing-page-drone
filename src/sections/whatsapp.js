@@ -1,12 +1,20 @@
-import { linkWhatsapp } from '../data/config.js';
-
-// / Todo link com class="js-whatsapp" e data-msg="..." no HTML
-// recebe aqui o href real, com o número da empresa e a mensagem prontos.
+// Todo atalho de WhatsApp passa primeiro pelo agendamento e pagamento.
 export function wireWhatsappLinks() {
   document.querySelectorAll('.js-whatsapp').forEach((link) => {
-    const mensagem = link.dataset.msg || 'Olá! Vim pelo site e quero saber mais sobre os serviços de drone.';
-    link.href = linkWhatsapp(mensagem);
-    link.target = '_blank';
-    link.rel = 'noopener';
+    link.href = '#contato';
+
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const botaoAgendar = document.getElementById('btn-agendar');
+      const mensagem = link.dataset.msg || 'Olá! Vim pelo site e quero saber mais sobre os serviços de drone.';
+      if (botaoAgendar) botaoAgendar.dataset.msgBase = mensagem;
+
+      document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      setTimeout(() => {
+        document.getElementById('data-agendamento')?.focus();
+      }, 500);
+    });
   });
 }

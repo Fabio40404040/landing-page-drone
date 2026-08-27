@@ -5,11 +5,13 @@ export const config = {
   slogan: 'Drone profissional para o seu negócio decolar',
   cidade: 'Iguatu, CE',
   cnpj: '00.000.000/0001-00',
-  telefoneExibicao: '(88) 90000-0000',
+  telefoneExibicao: '(88) 99614-2074',
   // Número do WhatsApp no formato internacional, só dígitos (DDI+DDD+número).
-  whatsappNumero: '5588900000000',
+  whatsappNumero: '5588999523807',
   instagram: '@voaservicosaereos',
-  email: 'contato@voaservicosaereos.com.br'
+  instagramUrl: 'https://instagram.com/_anneley_benicioinovacao',
+  email: 'gmail.com',
+  taxaCancelamento: '20%'   // porcentagem retida em caso de desistência após o adiantamento
 };
 
 // Monta um link do WhatsApp já com a mensagem preenchida.

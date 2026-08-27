@@ -11,10 +11,11 @@ export function renderServicos() {
       <p class="servico-card__nicho">${s.nicho}</p>
       <h3 class="servico-card__titulo">${s.titulo}</h3>
       <p class="servico-card__desc">${s.descricao}</p>
-      <a class="servico-card__link js-whatsapp"
-         href="#" data-msg="Olá! Quero um orçamento para o serviço de &quot;${s.titulo}&quot;.">
+      <a class="servico-card__link js-orcamento-servico"
+        href="#contato" data-servico="${s.titulo}">
         Pedir orçamento →
       </a>
     </li>
   `).join('');
 }
+
