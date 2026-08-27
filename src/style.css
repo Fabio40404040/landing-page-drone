@@ -231,7 +231,8 @@ a { color: inherit; text-decoration: none; }
   margin: 40px 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 326px), 326px));
+  justify-content: center;
   gap: 16px;
 }
 .instagram-card {
@@ -263,10 +264,6 @@ a { color: inherit; text-decoration: none; }
   transition: opacity 0.2s ease;
 }
 .instagram-card:hover .instagram-card__overlay { opacity: 1; }
-
-@media (max-width: 700px) {
-  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
-}
 
 /* Serviços */
 .servicos {
@@ -360,7 +357,12 @@ a { color: inherit; text-decoration: none; }
   gap: 48px;
   align-items: start;
 }
-.sobre__foto img { border-radius: 8px; width: 100%; }
+.sobre__foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 .garantias {
   list-style: none;
   margin: 24px 0 0;
@@ -468,6 +470,20 @@ a { color: inherit; text-decoration: none; }
   color: #C7D0DD;
   padding: 3px 8px;
   border-radius: 20px;
+}
+
+/* Instagran */
+.instagram-embed {
+  min-width: 0;
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.instagram-embed .instagram-media {
+  margin: 0;
 }
 
 /* Footer */
