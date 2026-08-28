@@ -596,11 +596,22 @@ body {
 .header__mark { color: #ff7a24; }
 .header__nav a { color: #aebbd0; }
 .header__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: #fff;
-  background: #ff6a1a;
+  background: #25d366;
   border: 0;
   border-radius: 999px;
-  box-shadow: 0 8px 25px rgba(255, 106, 26, 0.3);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.28);
+}
+
+.header__cta:hover { background: var(--orange); }
+
+.whatsapp-icon {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
 }
 
 .hero {
@@ -650,9 +661,12 @@ body {
 
 .btn { border-radius: 999px; }
 .btn--primary {
-  background: #ff6a1a;
-  box-shadow: 0 12px 30px rgba(255, 106, 26, 0.24);
+  background: #25d366;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.24);
 }
+
+.btn--primary:hover,
+.btn--whatsapp:hover { background: var(--orange); }
 
 .section__title { letter-spacing: -0.035em; }
 .section__eyebrow { color: #5bd9ff; }
