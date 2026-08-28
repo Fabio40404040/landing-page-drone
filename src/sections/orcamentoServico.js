@@ -7,7 +7,8 @@ export function initOrcamentoServico() {
       const servico = link.dataset.servico;
 
       if (botaoAgendar && servico) {
-        botaoAgendar.dataset.msgBase = `Olá! Quero pedir um orçamento para o serviço de "${servico}".`;
+        botaoAgendar.dataset.servico = servico;
+        botaoAgendar.dataset.msgBase = 'Olá! Quero pedir um orçamento para serviço de drone.';
       }
 
       const contato = document.getElementById('contato');

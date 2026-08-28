@@ -8,7 +8,10 @@ export function wireWhatsappLinks() {
 
       const botaoAgendar = document.getElementById('btn-agendar');
       const mensagem = link.dataset.msg || 'Olá! Vim pelo site e quero saber mais sobre os serviços de drone.';
-      if (botaoAgendar) botaoAgendar.dataset.msgBase = mensagem;
+      if (botaoAgendar) {
+        botaoAgendar.dataset.msgBase = mensagem;
+        delete botaoAgendar.dataset.servico;
+      }
 
       document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 

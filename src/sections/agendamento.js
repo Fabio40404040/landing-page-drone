@@ -70,13 +70,15 @@ export function initAgendamento() {
       return;
     }
 
-    const base = botao.dataset.msgBase || 'Olá! Quero pedir um orçamento para serviço de drone.';
-    let mensagem = base;
-
     const [ano, mes, dia] = input.value.split('-');
-    mensagem += ` Gostaria de agendar para o dia ${dia}/${mes}/${ano}.`;
-
-    mensagem += ` Vou fazer o adiantamento ${forma} para garantir minha data.`;
+    const base = botao.dataset.msgBase || 'Olá! Quero pedir um orçamento para serviço de drone.';
+    const servico = botao.dataset.servico;
+    const detalhes = [
+      servico ? `Serviço: ${servico}` : '',
+      `Data desejada: ${dia}/${mes}/${ano}`,
+      `Forma de pagamento do adiantamento: ${forma}`
+    ].filter(Boolean);
+    const mensagem = `${base}\n\n${detalhes.join('\n')}`;
 
     window.open(linkWhatsapp(mensagem), '_blank', 'noopener');
   });
