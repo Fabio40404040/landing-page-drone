@@ -1,16 +1,15 @@
 // Dados gerais do negócio.
 // Troque os valores abaixo pelos dados reais da empresa.
 export const config = {
-  nomeEmpresa: 'Voa Serviços Aéreos',
+  nomeEmpresa: 'Voa Leyanne',
   slogan: 'Drone profissional para o seu negócio decolar',
   cidade: 'Iguatu, CE',
-  cnpj: '00.000.000/0001-00',
   telefoneExibicao: '(88) 99614-2074',
   // Número do WhatsApp no formato internacional, só dígitos (DDI+DDD+número).
-  whatsappNumero: '5588999523807',
+  whatsappNumero: '5588996142074',
   instagram: '@voaservicosaereos',
-  instagramUrl: 'https://instagram.com/_anneley_benicioinovacao',
-  email: 'gmail.com',
+  instagramUrl: 'https://www.instagram.com/voacomleyanne/',
+  email: 'leyanne34@gmail.com',
   taxaCancelamento: '20%'   // porcentagem retida em caso de desistência após o adiantamento
 };
 

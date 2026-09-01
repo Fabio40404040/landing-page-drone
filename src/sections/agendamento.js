@@ -13,6 +13,7 @@ export function initAgendamento() {
   const aviso = document.getElementById('agendamento-aviso');
   const formularioAviso = document.getElementById('orcamento-aviso');
   const listaOcupadas = document.getElementById('agendamento-ocupadas');
+  const datasValidas = datasOcupadas.filter((data) => /^\d{4}-\d{2}-\d{2}$/.test(data));
   if (!botao) return;
 
   if (input) {
@@ -31,15 +32,15 @@ export function initAgendamento() {
   };
 
   // Mostra as datas já reservadas, pra pessoa já ver de cara antes de escolher.
-  if (listaOcupadas && datasOcupadas.length) {
+  if (listaOcupadas) {
     listaOcupadas.innerHTML =
       `<span class="agendamento__ocupadas-titulo">Já reservado:</span> ` +
-      datasOcupadas.map(d => `<span class="agendamento__chip">${formatarData(d)}</span>`).join('');
+      datasValidas.map(d => `<span class="agendamento__chip">${formatarData(d)}</span>`).join('');
   }
 
   if (input) {
     input.addEventListener('input', () => {
-      if (datasOcupadas.includes(input.value)) {
+      if (datasValidas.includes(input.value)) {
         aviso.textContent = 'Essa data já está reservada. Escolha outra, ou confirme pelo WhatsApp pra ver horários livres.';
         aviso.hidden = false;
         input.value = '';

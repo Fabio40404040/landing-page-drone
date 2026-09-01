@@ -116,16 +116,33 @@ a { color: inherit; text-decoration: none; }
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 18px;
   color: var(--navy);
 }
-.header__mark { 
-  color: var(--orange);
-  display: inline-flex; 
+
+.header__drone {
+  width: 80px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 140, 255, 0.3));
 }
+
+.header__brand-name {
+  display: inline-flex;
+  gap: 5px;
+  align-items: baseline;
+  color: #f7f9fc;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.header__brand-leyanne { color: #168cff; }
 .header__nav { 
   display: flex; 
   gap: 28px; 
@@ -198,6 +215,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--cloud); 
   overflow: hidden; 
 }
+.hero__mobile-cta { display: none; }
 .hero__grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -243,7 +261,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 820px) {
   .hero__grid { grid-template-columns: 1fr; padding: 48px 24px; }
-  .hero__visual { order: -1; max-width: 260px; margin: 0 auto; }
+  .hero__visual { order: 0; width: 100%; max-width: 520px; margin: 0 auto; }
 }
 
 .hero__social {
@@ -419,8 +437,19 @@ a { color: inherit; text-decoration: none; }
 .garantias strong { color: var(--navy); }
 
 @media (max-width: 700px) {
-  .sobre__grid { grid-template-columns: 1fr; }
-  .sobre__foto img { max-width: 160px; }
+  .sobre__grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .sobre__foto {
+    display: flex;
+    justify-content: center;
+    padding-right: 14px;
+  }
+  .sobre__foto img {
+    width: 160px;
+    max-width: 100%;
+  }
 }
 
 /* Contato */
@@ -633,7 +662,6 @@ body {
 
 .header__bar { min-height: 82px; }
 .header__logo { color: #f7f9fc; }
-.header__mark { color: #ff7a24; }
 .header__nav a { color: #aebbd0; }
 .header__cta {
   display: inline-flex;
@@ -687,16 +715,23 @@ body {
 }
 
 .hero__visual {
-  min-height: 440px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015));
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  min-height: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #020406;
+  border: 1px solid rgba(31, 203, 255, 0.2);
   border-radius: 38px;
-  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 35px 85px rgba(0, 0, 0, 0.42),
+    0 0 45px rgba(0, 132, 255, 0.08);
 }
 
-.hero__visual img {
-  width: 82%;
-  height: auto;
+.hero__visual .hero__brand-image {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .btn { border-radius: 999px; }
@@ -759,7 +794,14 @@ body {
 }
 .sobre .section__eyebrow { color: #087eaa; }
 .sobre .section__title { color: #10223d; }
-.sobre .hero__text { color: #52627a; }
+.sobre .hero__text {
+  color: #52627a;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
 .sobre__foto img {
   border-radius: 24px;
   box-shadow: 24px 24px 0 #d9f3fb;
@@ -809,6 +851,7 @@ body {
 
 @media (max-width: 760px) {
   .header__bar {
+    display: flex;
     min-height: 70px;
     gap: 12px;
   }
@@ -816,11 +859,34 @@ body {
     min-width: 0;
     font-size: 16px;
   }
-  .header__cta { display: none; }
+  .header__drone {
+    width: 68px;
+    height: 34px;
+  }
+  .header__brand-name {
+    gap: 4px;
+    font-size: 15px;
+  }
+  .header__bar > .header__cta { display: none; }
   .header__menu-button {
     display: block;
     flex: 0 0 auto;
     margin-left: auto;
+  }
+  .hero__mobile-cta {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 18px;
+  }
+  .hero__mobile-cta .header__cta {
+    justify-content: center;
+    width: auto;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  .hero__mobile-cta .whatsapp-icon {
+    width: 16px;
+    height: 16px;
   }
   .header__nav.header__nav--aberto {
     display: flex;
@@ -848,13 +914,15 @@ body {
     color: #65dcff;
   }
   .hero__grid {
-    gap: 38px;
-    padding-top: 54px;
+    gap: 32px;
+    padding-top: 36px;
     padding-bottom: 48px;
   }
-  .hero__title { font-size: clamp(42px, 13vw, 58px); }
+  .hero__title {
+    font-size: clamp(36px, 10.5vw, 48px);
+    line-height: 1.02;
+  }
   .hero__visual {
-    min-height: 320px;
     border-radius: 26px;
   }
   .contato__box {
