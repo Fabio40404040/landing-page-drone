@@ -14,6 +14,7 @@ import { wireWhatsappLinks } from './sections/whatsapp.js';
 import { initSmoothScroll } from './utils/smoothScroll.js';
 import { initAgendamento } from './sections/agendamento.js';
 import { initOrcamentoServico } from './sections/orcamentoServico.js';
+import { initMenuMobile } from './sections/menuMobile.js';
 
 renderServicos();
 renderPagamento();
@@ -22,3 +23,4 @@ initSmoothScroll();
 initPagamento();
 initAgendamento();
 initOrcamentoServico();
+initMenuMobile();

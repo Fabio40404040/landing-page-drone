@@ -108,6 +108,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   gap: 20px;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -148,6 +149,45 @@ a { color: inherit; text-decoration: none; }
 }
 .header__cta:hover { 
   background: var(--orange); }
+
+.header__menu-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--cloud);
+  cursor: pointer;
+}
+
+.header__menu-button span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 5px auto;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.header__menu-button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.header__menu-button[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__menu-button[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__menu-button[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 @media (max-width: 760px) {
   .header__nav { display: none; }
@@ -768,7 +808,45 @@ body {
 }
 
 @media (max-width: 760px) {
-  .header__bar { min-height: 70px; }
+  .header__bar {
+    min-height: 70px;
+    gap: 12px;
+  }
+  .header__logo {
+    min-width: 0;
+    font-size: 16px;
+  }
+  .header__cta { display: none; }
+  .header__menu-button {
+    display: block;
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+  .header__nav.header__nav--aberto {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 24px;
+    left: 24px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    background: #0b1b31;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  }
+  .header__nav a {
+    padding: 14px 16px;
+    border-radius: 10px;
+    color: #f7f9fc;
+    font-size: 16px;
+  }
+  .header__nav a:hover,
+  .header__nav a:focus-visible {
+    background: rgba(91, 217, 255, 0.1);
+    color: #65dcff;
+  }
   .hero__grid {
     gap: 38px;
     padding-top: 54px;
