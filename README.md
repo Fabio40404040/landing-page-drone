@@ -13,10 +13,10 @@ Abra o endereço que aparecer no terminal (normalmente `http://localhost:5173`).
 
 ## Antes de publicar
 
-1. **`src/data/config.js`** — troque `whatsappNumero`, `telefoneExibicao`, `cnpj`, `cidade`, `instagram` e `email` pelos dados reais da empresa.
-2. **`src/data/servicos.js`** — ajuste títulos e descrições dos serviços conforme os nichos que a empresa realmente atende.
+1. **`src/data/config.js`** — troque `whatsappNumero`, `telefoneExibicao`, `cidade`, `instagram` e `email` pelos dados reais do negócio.
+2. **`src/data/servicos.js`** — ajuste títulos e descrições dos serviços conforme os nichos realmente atendidos.
 3. **`src/assets/images/`** — os ícones e a foto do piloto são ilustrações em SVG (placeholder). Troque `piloto.svg` por uma foto real (jpg/png) da pessoa responsável e ajuste o `import` em `src/sections/sobre.js`.
-4. **`public/favicon.svg`** — pode trocar pela logo real da empresa.
+4. **`public/favicon.svg`** — pode trocar pela logo real da marca.
 
 ## Build para produção
 
@@ -33,7 +33,7 @@ src/
 ├── main.js            # importa o CSS e inicializa todas as seções
 ├── style.css           # estilos globais
 ├── data/
-│   ├── config.js       # dados da empresa + gerador de link do WhatsApp
+│   ├── config.js       # dados do negócio + gerador de link do WhatsApp
 │   └── servicos.js     # lista de serviços por nicho
 ├── sections/            # cada seção da página (header, hero, servicos, sobre, contato, footer)
 ├── utils/

@@ -1,5 +1,5 @@
 // Dados gerais do negócio.
-// Troque os valores abaixo pelos dados reais da empresa.
+// Troque os valores abaixo pelos dados reais do negócio.
 export const config = {
   nomeEmpresa: 'Voa Leyanne',
   slogan: 'Drone profissional para o seu negócio decolar',
